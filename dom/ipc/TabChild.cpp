@@ -410,7 +410,7 @@ TabChild::Create(nsIContentChild* aManager,
 {
     if (sPreallocatedTab &&
         sPreallocatedTab->mChromeFlags == aChromeFlags &&
-        aContext.IsMozBrowserOrApp()) {
+        aContext.IsMozBrowser()) {
 
         RefPtr<TabChild> child = sPreallocatedTab.get();
         sPreallocatedTab = nullptr;
@@ -779,9 +779,9 @@ TabChild::UpdateFrameType()
   MOZ_ASSERT(docShell);
 
   // TODO: Bug 1252794 - remove frameType from nsIDocShell.idl
-  docShell->SetFrameType(IsMozBrowserElement() ? nsIDocShell::FRAME_TYPE_BROWSER :
-                           HasOwnApp() ? nsIDocShell::FRAME_TYPE_APP :
-                             nsIDocShell::FRAME_TYPE_REGULAR);
+  docShell->SetFrameType(IsMozBrowserElement() ?
+                           nsIDocShell::FRAME_TYPE_BROWSER :
+                           nsIDocShell::FRAME_TYPE_REGULAR);
 }
 
 NS_INTERFACE_MAP_BEGIN_CYCLE_COLLECTION_INHERITED(TabChild)
@@ -1091,11 +1091,11 @@ TabChild::ProvideWindow(mozIDOMWindowProxy* aParent,
 {
     *aReturn = nullptr;
 
-    // If aParent is inside an <iframe mozbrowser> or <iframe mozapp> and this
-    // isn't a request to open a modal-type window, we're going to create a new
-    // <iframe mozbrowser/mozapp> and return its window here.
+    // If aParent is inside an <iframe mozbrowser> and this isn't a request to
+    // open a modal-type window, we're going to create a new <iframe mozbrowser>
+    // and return its window here.
     nsCOMPtr<nsIDocShell> docshell = do_GetInterface(aParent);
-    bool iframeMoz = (docshell && docshell->GetIsInMozBrowserOrApp() &&
+    bool iframeMoz = (docshell && docshell->GetIsInMozBrowser() &&
                       !(aChromeFlags & (nsIWebBrowserChrome::CHROME_MODAL |
                                         nsIWebBrowserChrome::CHROME_OPENAS_DIALOG |
                                         nsIWebBrowserChrome::CHROME_OPENAS_CHROME)));
@@ -1208,24 +1208,6 @@ TabChild::~TabChild()
   }
 }
 
-void
-TabChild::SetProcessNameToAppName()
-{
-  nsCOMPtr<mozIApplication> app = GetOwnApp();
-  if (!app) {
-    return;
-  }
-
-  nsAutoString appName;
-  nsresult rv = app->GetName(appName);
-  if (NS_FAILED(rv)) {
-    NS_WARNING("Failed to retrieve app name");
-    return;
-  }
-
-  ContentChild::GetSingleton()->SetProcessName(appName, true);
-}
-
 bool
 TabChild::RecvLoadURL(const nsCString& aURI,
                       const ShowInfo& aInfo)
@@ -1237,8 +1219,6 @@ TabChild::RecvLoadURL(const nsCString& aURI,
     }
 
     ApplyShowInfo(aInfo);
-
-    SetProcessNameToAppName();
   }
 
   nsresult rv =
@@ -1279,7 +1259,7 @@ TabChild::ApplyShowInfo(const ShowInfo& aInfo)
   nsCOMPtr<nsIDocShell> docShell = do_GetInterface(WebNavigation());
   if (docShell) {
     nsCOMPtr<nsIDocShellTreeItem> item = do_GetInterface(docShell);
-    if (IsMozBrowserOrApp()) {
+    if (IsMozBrowser()) {
       // B2G allows window.name to be set by changing the name attribute on the
       // <iframe mozbrowser> element. window.open calls cause this attribute to
       // be set to the correct value. A normal <xul:browser> element has no such
@@ -2135,7 +2115,7 @@ TabChild::RecvSwappedWithOtherRemoteLoader(const IPCTabContext& aContext)
   // Ignore previous value of mTriedBrowserInit since owner content has changed.
   mTriedBrowserInit = true;
   // Initialize the child side of the browser element machinery, if appropriate.
-  if (IsMozBrowserOrApp()) {
+  if (IsMozBrowser()) {
     RecvLoadRemoteScript(BROWSER_ELEMENT_CHILD_SCRIPT, true);
   }
 
@@ -2494,7 +2474,7 @@ TabChild::InitTabChildGlobal(FrameScriptLoading aScriptLoading)
     mTriedBrowserInit = true;
     // Initialize the child side of the browser element machinery,
     // if appropriate.
-    if (IsMozBrowserOrApp()) {
+    if (IsMozBrowser()) {
       RecvLoadRemoteScript(BROWSER_ELEMENT_CHILD_SCRIPT, true);
     }
   }
