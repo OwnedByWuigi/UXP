@@ -1319,13 +1319,6 @@ PresShell::Destroy()
   mTouchManager.Destroy();
 }
 
-void
-PresShell::MakeZombie()
-{
-  mIsZombie = true;
-  CancelAllPendingReflows();
-}
-
 nsRefreshDriver*
 nsIPresShell::GetRefreshDriver() const
 {
@@ -3959,10 +3952,6 @@ PresShell::FlushPendingNotifications(mozFlushType aType)
 void
 PresShell::FlushPendingNotifications(mozilla::ChangesToFlush aFlush)
 {
-  if (mIsZombie) {
-    return;
-  }
-
   /**
    * VERY IMPORTANT: If you add some sort of new flushing to this
    * method, make sure to add the relevant SetNeedLayoutFlush or
@@ -6170,7 +6159,7 @@ PresShell::Paint(nsView*        aViewToPaint,
 
   MOZ_ASSERT(!mApproximateFrameVisibilityVisited, "Should have been cleared");
 
-  if (!mIsActive || mIsZombie) {
+  if (!mIsActive) {
     return;
   }
 
@@ -9024,10 +9013,6 @@ PresShell::ScheduleReflowOffTimer()
 bool
 PresShell::DoReflow(nsIFrame* target, bool aInterruptible)
 {
-  if (mIsZombie) {
-    return true;
-  }
-
   gfxTextPerfMetrics* tp = mPresContext->GetTextPerfMetrics();
   TimeStamp timeStart;
   if (tp) {
