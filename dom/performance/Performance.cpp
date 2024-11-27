@@ -490,6 +490,11 @@ Performance::Measure(JSContext* aCx,
                      const Optional<nsAString>& aEndMark,
                      ErrorResult& aRv)
 {
+  if (!GetParentObject()) {
+    aRv.Throw(NS_ERROR_DOM_INVALID_STATE_ERR);
+    return nullptr;
+  }
+
   // Don't add the entry if the buffer is full. XXX should be removed by bug
   // 1159003.
   if (mUserEntries.Length() >= mResourceTimingBufferSize) {
