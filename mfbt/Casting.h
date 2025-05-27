@@ -65,13 +65,11 @@ namespace detail {
 
 template <typename T>
 constexpr int64_t safe_integer() {
-  static_assert(std::is_floating_point_v<T>);
   return std::pow(2, std::numeric_limits<T>::digits);
 }
 
 template <typename T>
 constexpr uint64_t safe_integer_unsigned() {
-  static_assert(std::is_floating_point_v<T>);
   return std::pow(2, std::numeric_limits<T>::digits);
 }
 
@@ -105,7 +103,6 @@ bool IsInBounds(In aIn) {
   }
   // Normal casting applies, the floating point number is floored.
   if constexpr (inFloat && !outFloat) {
-    static_assert(sizeof(aIn) <= sizeof(int64_t));
     // Check if the input floating point is larger than the output bounds. This
     // catches situations where the input is a float larger than the max of the
     // output type.
@@ -181,7 +178,6 @@ template<typename To, typename From>
 inline To
 AssertedCast(const From aFrom)
 {
-  static_assert(std::is_arithmetic_v<To> && std::is_arithmetic_v<From>);
   MOZ_ASSERT((detail::IsInBounds<From, To>(aFrom)));
   return static_cast<To>(aFrom);
 }
@@ -197,7 +193,6 @@ template<typename To, typename From>
 inline To
 ReleaseAssertedCast(const From aFrom)
 {
-  static_assert(std::is_arithmetic_v<To> && std::is_arithmetic_v<From>);
   MOZ_RELEASE_ASSERT((detail::IsInBounds<From, To>(aFrom)));
   return static_cast<To>(aFrom);
 }
