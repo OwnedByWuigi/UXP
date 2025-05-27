@@ -373,7 +373,7 @@ void PannerNode::DestroyMediaStream()
 float
 PannerNodeEngine::LinearGainFunction(double aDistance)
 {
-  double clampedRollof = std::clamp(mRolloffFactor, 0.0, 1.0);
+  double clampedRollof = min(1.0, max(0.0, mRolloffFactor));
   return AssertedCast<float>(
 	1.0 - clampedRollof * (std::max(std::min(aDistance, mMaxDistance), mRefDistance) - mRefDistance) / (mMaxDistance - mRefDistance));
 }
