@@ -1572,7 +1572,7 @@ GetThemeDpiScaleFactor(nsIFrame* aFrame)
 static bool
 IsScrollbarWidthThin(nsIFrame* aFrame)
 {
-  return aFrame->StyleUserInterface()->mScrollbarWidth == StyleScrollbarWidth::Thin;
+  return aFrame->StyleUIReset()->mScrollbarWidth == StyleScrollbarWidth::Thin;
 }
 
 NS_IMETHODIMP
