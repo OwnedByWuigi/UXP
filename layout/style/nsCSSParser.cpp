@@ -8650,7 +8650,8 @@ CSSParserImpl::ParseVariant(nsCSSValue& aValue,
          (tk->mIdent.LowerCaseEqualsLiteral("rgb") ||
           tk->mIdent.LowerCaseEqualsLiteral("hsl") ||
           tk->mIdent.LowerCaseEqualsLiteral("rgba") ||
-          tk->mIdent.LowerCaseEqualsLiteral("hsla"))))
+          tk->mIdent.LowerCaseEqualsLiteral("hsla") ||
+          tk->mIdent.LowerCaseEqualsLiteral("color-mix"))))
     {
       // Put token back so that parse color can get it
       UngetToken();
