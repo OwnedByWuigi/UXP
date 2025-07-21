@@ -73,6 +73,7 @@ EXPORTS += [
     'nsStyleTransformMatrix.h',
     'nsStyleUtil.h',
     'RuleCascadeData.h',
+    'RuleProcessorGroup.h',
 ]
 
 EXPORTS.mozilla += [
@@ -178,6 +179,7 @@ UNIFIED_SOURCES += [
     'nsTransitionManager.cpp',
     'RuleNodeCacheConditions.cpp',
     'RuleProcessorCache.cpp',
+    'RuleProcessorGroup.cpp',
     'StyleAnimationValue.cpp',
     'StyleRule.cpp',
     'StyleSheet.cpp',
