@@ -4067,7 +4067,11 @@ nsDOMWindowUtils::AddElementEventState(nsIDOMElement* aElement, uint64_t aState)
   if (!content) {
     return NS_ERROR_INVALID_ARG;
   }
-  content->AddStates(mozilla::EventStates(aState));
+  mozilla::dom::Element* element = static_cast<mozilla::dom::Element*>(content.get());
+  if (!element) {
+    return NS_ERROR_INVALID_ARG;
+  }
+  element->SetEventState(mozilla::EventStates(aState), true);
   return NS_OK;
 }
 
@@ -4079,6 +4083,10 @@ nsDOMWindowUtils::RemoveElementEventState(nsIDOMElement* aElement, uint64_t aSta
   if (!content) {
     return NS_ERROR_INVALID_ARG;
   }
-  content->RemoveStates(mozilla::EventStates(aState));
+  mozilla::dom::Element* element = static_cast<mozilla::dom::Element*>(content.get());
+  if (!element) {
+    return NS_ERROR_INVALID_ARG;
+  }
+  element->SetEventState(mozilla::EventStates(aState), false);
   return NS_OK;
 }
