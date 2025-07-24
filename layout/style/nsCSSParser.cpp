@@ -7447,9 +7447,6 @@ CSSParserImpl::ParseColor(nsCSSValue& aValue)
       // check for color-mix function
       if (mToken.mIdent.LowerCaseEqualsLiteral("color-mix")) {
         // parse color-mix function
-        RefPtr<mozilla::css::ColorMixValue> colorMix = new mozilla::css::ColorMixValue(
-          mozilla::css::ColorMixColorSpace::sRGB, nsCSSValue(), nsCSSValue());
-        
         if (!GetToken(true)) {
           SkipUntil(')');
           return CSSParseResult::Error;
@@ -7464,8 +7461,6 @@ CSSParserImpl::ParseColor(nsCSSValue& aValue)
           SkipUntil(')');
           return CSSParseResult::Error;
         }
-        
-        colorMix->mColorSpace = mozilla::css::ColorMixColorSpace::sRGB;
         
         if (!ExpectSymbol(',', true)) {
           SkipUntil(')');
