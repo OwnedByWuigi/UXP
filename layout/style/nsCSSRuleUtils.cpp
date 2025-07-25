@@ -576,7 +576,6 @@ nsCSSRuleUtils::StateSelectorMatches(Element* aElement,
   for (nsPseudoClassList* pseudoClass = aSelector->mPseudoClassList;
        pseudoClass;
        pseudoClass = pseudoClass->mNext) {
-    // --- Autofill explicit matching ---
     if (pseudoClass->mType == CSSPseudoClassType::autofill ||
         pseudoClass->mType == CSSPseudoClassType::mozAutofillHighlight) {
       // Match if the element has the autofill state, regardless of focus
@@ -585,7 +584,6 @@ nsCSSRuleUtils::StateSelectorMatches(Element* aElement,
       }
       continue; // This pseudo-class matches
     }
-    // --- End autofill explicit matching ---
     auto idx = static_cast<CSSPseudoClassTypeBase>(pseudoClass->mType);
     EventStates statesToCheck = nsCSSPseudoClasses::sPseudoClassStates[idx];
     if (!statesToCheck.IsEmpty() && !StateSelectorMatches(aElement,
