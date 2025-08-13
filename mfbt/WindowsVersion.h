@@ -83,44 +83,6 @@ IsWindowsBuildOrLater(uint32_t aBuild)
   return false;
 }
 
-#if defined(_M_X64) || defined(_M_AMD64)
-// We support only Win7 or later on Win64.
-MOZ_ALWAYS_INLINE bool
-IsXPSP3OrLater()
-{
-  return true;
-}
-
-MOZ_ALWAYS_INLINE bool
-IsWin2003OrLater()
-{
-  return true;
-}
-
-MOZ_ALWAYS_INLINE bool
-IsWin2003SP2OrLater()
-{
-  return true;
-}
-
-MOZ_ALWAYS_INLINE bool
-IsVistaOrLater()
-{
-  return true;
-}
-
-MOZ_ALWAYS_INLINE bool
-IsVistaSP1OrLater()
-{
-  return true;
-}
-
-MOZ_ALWAYS_INLINE bool
-IsWin7OrLater()
-{
-  return true;
-}
-#else
 MOZ_ALWAYS_INLINE bool
 IsXPSP3OrLater()
 {
@@ -156,7 +118,6 @@ IsWin7OrLater()
 {
   return IsWindowsVersionOrLater(0x06010000ul);
 }
-#endif
 
 MOZ_ALWAYS_INLINE bool
 IsWin7SP1OrLater()
@@ -180,6 +141,42 @@ MOZ_ALWAYS_INLINE bool
 IsWin10OrLater()
 {
   return IsWindowsVersionOrLater(0x0a000000ul);
+}
+
+enum class WinBuild : uint32_t {
+  Win10RTM = 10240,
+  Win10v1511 = 10586,
+  Win10v1607 = 14393,
+  Win10v1703 = 15063,
+  Win10v1709 = 16299,
+  Win10v1803 = 17134,
+  Win10v1809 = 17763,
+  Win10v1903 = 18362,
+  Win10v19H2 = 18363,
+  Win10v20H1 = 19041,
+  Win10v20H2 = 19042,
+  Win10v21H1 = 19043,
+  Win10v21H2 = 19044,
+  Win10v22H2 = 19045,
+  Win11RTM = 22000,
+  Win11v22H2 = 22621,
+  Win11v23H2 = 22631,
+  Win11v24H2 = 26100,
+  Win11v25H2 = 26200
+};
+  
+// Check for at least named build aBuild taken from WinBuild enum above.
+inline bool
+IsWindows10BuildOrLater(WinBuild aBuild) {
+  uint32_t build = static_cast<uint32_t>(aBuild);
+  return IsWin10OrLater() && IsWindowsBuildOrLater(build);
+}
+
+// Windows 11 RTM
+MOZ_ALWAYS_INLINE bool
+IsWin11OrLater()
+{
+  return IsWindows10BuildOrLater(WinBuild::Win11RTM);
 }
 
 MOZ_ALWAYS_INLINE bool
