@@ -1077,8 +1077,6 @@ Function .onInit
   SetRegView 64
 !endif
 
-  ${InstallOnInitCommon} "$(WARN_MIN_SUPPORTED_OSVER_CPU_MSG)"
-
 ; The commands inside this ifndef are needed prior to NSIS 3.0a2 and can be
 ; removed after we require NSIS 3.0a2 or greater.
 !ifndef NSIS_PACKEDVERSION
