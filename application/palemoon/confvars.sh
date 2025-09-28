@@ -12,7 +12,7 @@ MOZ_APP_BASENAME=Lun3r
 MOZ_APP_VENDOR=Eclipse Community
 MOZ_APP_UA_NAME=Lun3r
 
-# For Lun3r we want to use 33.7.YYYY.MM.DD as MOZ_APP_VERSION in release
+# For Lun3r we want to use 33.9.YYYY.MM.DD as MOZ_APP_VERSION in release
 # builds so add-on developers have something to target while maintaining
 # Pale Moon compatiblity.
 # To enable add "export LUN3R_VERSION=1" to the .mozconfig file.
@@ -20,7 +20,7 @@ MOZ_APP_UA_NAME=Lun3r
 # don't export the variable if you are in development or don't care.
 # When not exported we fall back the value in the version*.txt file.
 if test -n "$LUN3R_VERSION" ; then
-    MOZ_APP_VERSION=33.7.`date --utc '+%Y.%m.%d'`
+    MOZ_APP_VERSION=33.9.`date --utc '+%Y.%m.%d'`
     MOZ_APP_VERSION_DISPLAY=`date --utc '+%Y.%m.%d'`
 else
     MOZ_APP_VERSION=`cat ${_topsrcdir}/$MOZ_BUILD_APP/config/version.txt`
