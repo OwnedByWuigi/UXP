@@ -1,5 +1,7 @@
 duckduckgo-palemoon
+google-nocodes
 bing
+ddg-lite
 ecosia
 ekoru
 twitter
