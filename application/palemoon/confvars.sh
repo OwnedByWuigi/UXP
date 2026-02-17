@@ -9,7 +9,7 @@
 # to "Lun3r" and "Eclipse Community" respectively for
 # Lun3r
 MOZ_APP_BASENAME=Lun3r 
-MOZ_APP_VENDOR=Eclipse Community
+MOZ_APP_VENDOR="Eclipse Community"
 MOZ_APP_UA_NAME=Lun3r
 
 # For Lun3r we want to use 33.9.YYYY.MM.DD as MOZ_APP_VERSION in release
