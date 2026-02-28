@@ -1,5 +1,7 @@
 # Dactyloidae web browser
 
+<img src="readme/newtab.png">
+
 Dactyloidae is a fork of Eclipse Lun3r (fork of Pale Moon made for Windows XP).
 
 Some advantages over upstream, roytam1's New Moon and Lun3r are:
