@@ -3832,19 +3832,6 @@ html|*.urlbar-input:-moz-lwtheme::placeholder,
   outline-offset: -3px;
 }
 
-/* Location bar dropmarker */
-
-.urlbar-history-dropmarker {
-  -moz-appearance: none;
-  padding: 0 3px;
-  background-color: transparent;
-  border: none;
-  width: auto;
-  list-style-image: var(--urlbar-dropmarker-url);
-  -moz-image-region: var(--urlbar-dropmarker-region);
-  transition: opacity 0.15s ease;
-}
-
 #urlbar-wrapper[switchingtabs] > #urlbar > .urlbar-textbox-container > .urlbar-history-dropmarker {
   transition: none;
 }
