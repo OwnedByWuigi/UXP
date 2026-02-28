@@ -1,8 +1,0 @@
-duckduckgo-palemoon
-bing
-ddg-lite
-ecosia
-ekoru
-twitter
-wikipedia
-yahoo

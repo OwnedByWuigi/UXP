@@ -30,7 +30,7 @@
 #ifdef XP_MACOSX
         inwindowmenu="false"
 #else
-        title="&aboutDialog.title;"
+        title="About LegacyEngine"
 #endif
         role="dialog"
         aria-describedby="version distribution distributionId communityDesc contributeDesc trademark"
@@ -141,7 +141,7 @@
 #endif
 #else
           <description class="text-blurb" id="contributeDesc">
-          This is an unofficial build of Hydra. For official builds, please go to <label class="text-link" href="https://eclipse.cx/projects/hydra">Eclipse Community website</label>.
+          LegacyEngine is a custom browser, based on the best of Firefox.
           </description>
 #endif
         </vbox>

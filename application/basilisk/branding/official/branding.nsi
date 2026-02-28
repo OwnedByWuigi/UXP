@@ -8,9 +8,9 @@
 
 # BrandFullNameInternal is used for some registry and file system values
 # instead of BrandFullName and typically should not be modified.
-!define BrandFullNameInternal "Eclipse Hydra"
-!define CompanyName           "Eclipse Community"
-!define URLInfoAbout          "https://eclipse.cx"
-!define URLUpdateInfo         "https://github.com/Eclipse-Community/UXP/releases"
-!define HelpLink              "https://board.eclipse.cx/viewtopic.php?t=710"
-!define URLSystemRequirements "https://github.com/Eclipse-Community/UXP"
+!define BrandFullNameInternal "LegacyEngine"
+!define CompanyName           "OwnedByWuigi"
+!define URLInfoAbout          "https://github.com/OwnedByWuigi/"
+!define URLUpdateInfo         "https://github.com/OwnedByWuigi/UXP/releases"
+!define HelpLink              "https://github.com/OwnedByWuigi/UXP/issues"
+!define URLSystemRequirements "https://github.com/OwnedByWuigi/UXP/"

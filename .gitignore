@@ -30,6 +30,8 @@ ID
 /machrc
 /.machrc
 
+obj-x86_64-pc-mingw32/
+
 # Empty marker file that's generated when we check out NSS
 security/manager/.nss.checkout
 

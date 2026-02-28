@@ -6,7 +6,6 @@
 
 html {
   font: message-box;
-  font-size: 100%;
   background-color: hsl(0,0%,95%);
   color: #000;
   height: 100%;
@@ -20,6 +19,10 @@ body {
   height: 100%;
 }
 
+h1 {
+	font-weight: normal !important
+}
+
 input,
 button {
   font-size: inherit;
@@ -31,12 +34,9 @@ a {
   text-decoration: none;
 }
 
-.spacer {
-  -moz-box-flex: 1;
-}
-
 #topSection {
   text-align: center;
+  margin-top: 100px;
 }
 
 #brandLogo {
