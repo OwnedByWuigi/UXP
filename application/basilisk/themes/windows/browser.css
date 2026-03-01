@@ -775,10 +775,12 @@
     border-left: 1px solid;
     border-image: linear-gradient(transparent 21%, var(--urlbar-separator-color) 21%, var(--urlbar-separator-color) 79%, transparent 79%);
     border-image-slice: 1 !important;
+	background: white !important;
   }
 
   .urlbar-input-box, #urlbar-display-box {
     border-inline-start: 0 !important;
+	background: white !important;
   }
 
   .urlbar-history-dropmarker {
