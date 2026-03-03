@@ -22,4 +22,4 @@ MOZ_DISTRIBUTION_ID=com.opensource
 
 MOZ_MACBUNDLE_NAME="Dactyloidae.app"
 
-MOZ_SOURCE_REPO=https://github.com/Eclipse-Community/UXP
+MOZ_SOURCE_REPO=https://github.com/OwnedByWuigi/UXP
