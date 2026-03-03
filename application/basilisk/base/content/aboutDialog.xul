@@ -30,7 +30,7 @@
 #ifdef XP_MACOSX
         inwindowmenu="false"
 #else
-        title="About LegacyEngine"
+        title="About Dactyloidae"
 #endif
         role="dialog"
         aria-describedby="version distribution distributionId communityDesc contributeDesc trademark"
@@ -140,8 +140,14 @@
           </description>
 #endif
 #else
+          <description class="text-blurb" id="communityDesc">
+		  
+          Dactyloidae is a custom browser, based on the best of Firefox.
+		  Dactyloidae is designed and maintained by multiple open-source contributors (OwnedByWuigi, Eclipse Community, RT1), working together to make better software around the globe.
+		  </description>
+		
           <description class="text-blurb" id="contributeDesc">
-          LegacyEngine is a custom browser, based on the best of Firefox.
+		  If you wish to contribute, please consider helping out by getting involved in our development by tackling some of the issues found in our <label class="text-link" href="https://github.com/OwnedByWuigi/UXP/">GitHub issue tracker</label>.
           </description>
 #endif
         </vbox>
