@@ -1,5 +1,6 @@
 # Dactyloidae web browser
-
+<a href="https://discord.gg/46AFkK9QnX">Official Discord server</a>
+<br><br>
 <img src="readme/newtab.png">
 
 Dactyloidae is a fork of Eclipse Lun3r (fork of Pale Moon made for Windows XP).
