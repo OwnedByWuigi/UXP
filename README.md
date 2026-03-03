@@ -1,6 +1,5 @@
-<center>
-<img src="application/basilisk/branding/unofficial/branding/about-wordmark.svg">
-# Dactyloidae web browser
+<img src="application/basilisk/branding/unofficial/content/about-wordmark.svg">
+<h2>Dactyloidae web browser</h2>
 <a href="https://discord.gg/46AFkK9QnX">Official Discord server</a>
 <br><br>
 <img src="readme/newtab.png">
@@ -16,8 +15,7 @@ Some advantages over upstream, roytam1's New Moon and Lun3r are:
 ## Credits
 @Eclipse-Community for original code
 
-@SoftBluey for logo seen in README and About 
-</center>
+@SoftBluey for logo seen in README and About
 
 
 
