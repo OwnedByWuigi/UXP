@@ -12,10 +12,11 @@ Some advantages over upstream, roytam1's New Moon and Lun3r are:
 - More modern theme
 - Better e10s support
 
+We (as in I) reccomend using Palefill to potentially fix any browser issues:
+<a href="https://github.com/martok/palefill/releases">Download it here</a>
+
+
 ## Credits
 @Eclipse-Community for original code
 
 @SoftBluey for logo seen in README and About
-
-
-
