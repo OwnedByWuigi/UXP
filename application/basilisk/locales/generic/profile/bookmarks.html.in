@@ -21,9 +21,6 @@
     <dt><h3 personal_toolbar_folder="true">@bookmarks_toolbarfolder@</h3></dt>
     <dd>@bookmarks_toolbarfolder_description@
     <dl><p>
-            <dt><a href="https://eclipse.cx/" icon="@eclipse_icon@">Eclipse Main Site</a></dt>
-            <dt><a href="https://board.eclipse.cx/" icon="@eclipse_icon@">Eclipse Community</a></dt>
-            <dt><a href="https://github.com/Eclipse-Community/UXP/issues" icon="@github_icon@">Report Issues</a></dt>
-            <dt><a href="https://github.com/Eclipse-Community/UXP/releases" icon="@github_icon@">Get New Releases</a></dt>
+            <dt><a href="https://github.com/OwnedByWuigi/UXP/issues" icon="@github_icon@">Report Issues</a></dt>
     </dl><p>
 </dl>

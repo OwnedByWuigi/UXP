@@ -2,9 +2,9 @@
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
-<!ENTITY  brandShorterName      "Serpent">
-<!ENTITY  brandShortName        "Serpent">
-<!ENTITY  brandFullName         "Serpent">
-<!ENTITY  vendorShortName       "Open Source Contributors">
-<!ENTITY  vendorFullName        "Open Source Contributors">
+<!ENTITY  brandShorterName      "Dactyloidae">
+<!ENTITY  brandShortName        "Dactyloidae">
+<!ENTITY  brandFullName         "Dactyloidae">
+<!ENTITY  vendorShortName       "OwnedByWuigi">
+<!ENTITY  vendorFullName        "OwnedByWuigi">
 <!ENTITY  trademarkInfo.part1   " ">
