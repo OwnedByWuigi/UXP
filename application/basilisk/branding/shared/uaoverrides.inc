@@ -83,6 +83,7 @@ pref("@GUAO_PREF@.yuku.com","Mozilla/5.0 (%OS_SLICE% rv:@GK_VERSION@) @GK_SLICE@
 pref("@GUAO_PREF@.twitter.com","Mozilla/5.0 (%OS_SLICE% rv:102.0) @GK_SLICE@ Firefox/102.0 @APP_SLICE@");
 pref("@GUAO_PREF@.x.com","Mozilla/5.0 (%OS_SLICE% rv:102.0) @GK_SLICE@ Firefox/102.0 @APP_SLICE@");
 pref("@GUAO_PREF@.slack.com","Mozilla/5.0 (%OS_SLICE% rv:120.0) @GK_SLICE@ Firefox/120.0 @APP_SLICE@");
+pref("@GUAO_PREF@.apple.com","Mozilla/5.0 (%OS_SLICE% rv:128.0) @GK_SLICE@ Firefox/128.0");
 // There are multiple addons on the Pale Moon addons site that work with Basilisk that are not listed on the Basilisk addons site.
 pref("@GUAO_PREF@.addons.palemoon.org","Mozilla/5.0 (%OS_SLICE% rv:@GK_VERSION@) @GK_SLICE@ @UXP_VERSION_SLICE@ @FX_SLICE@ @PALE_MOON_SLICE@");
 // Same goes for upstream Firefox addons on the Mozilla addons site since this fork has (some) WebExtensions support now
