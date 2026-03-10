@@ -1,6 +1,6 @@
 <img src="application/basilisk/branding/unofficial/content/about-wordmark.svg">
 <h2>Dactyloidae web browser</h2>
-<a href="https://discord.gg/46AFkK9QnX">Official Discord server</a>
+<a href="https://discord.gg/ecx">Official Discord server</a>
 <br><br>
 <img src="readme/newtab.png">
 
